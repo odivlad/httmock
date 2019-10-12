@@ -58,10 +58,11 @@ Obsoletes:     python-httmock < 1.2.3-3%{?dist}
 %if %{with python3}
 %package -n python%{python3_pkgversion}-%{pkgname}
 Summary:       %{sum}
-Requires:      python%{python3_pkgversion}-requests >= 1.0.0
+Requires:      python36-requests >= 1.0.0
 BuildRequires: python%{python3_pkgversion}-devel
-BuildRequires: python%{python3_pkgversion}-requests >= 1.0.0
-BuildRequires: python%{python3_pkgversion}-nose%{nose_version}
+BuildRequires: python36-requests >= 1.0.0
+BuildRequires: python36-nose%{nose_version}
+%{?python_provide:%python_provide python3-%{pkgname}}
 
 %description -n python%{python3_pkgversion}-%{pkgname}
 %{descr}
